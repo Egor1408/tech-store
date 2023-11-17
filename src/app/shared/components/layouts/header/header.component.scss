@@ -1,0 +1,43 @@
+
+.navigation {
+
+    &-list {
+        display: flex;
+        gap: 30px;
+
+        a {
+            font-size: 18px;
+            font-weight: 700;
+            color: #393e46;
+
+            &.active,
+            &:hover {
+                color: #393e96;
+                text-decoration: underline;
+            }
+        }
+    } 
+}
+
+.user-panel {
+
+    &-list {
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+    }
+    
+    &-item {
+
+        svg {
+            color: #393e46;
+        }
+        
+        &:hover {
+            
+            svg {
+                color: rgb(152, 77, 53);
+            }
+        }
+    }
+}
