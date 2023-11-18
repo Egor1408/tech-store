@@ -19,12 +19,9 @@ import { FooterComponent } from './shared/components/layouts/footer/footer.compo
     ],
 })
 export class AppComponent implements OnInit {
-    public isAuth!: boolean;
 
     constructor() {}
 
-    ngOnInit() {
-        this.isAuth = false;
-    }
+    ngOnInit() {}
 }
 

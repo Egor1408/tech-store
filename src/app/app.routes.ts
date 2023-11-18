@@ -4,6 +4,7 @@ import { BacketPageComponent } from './pages/backet-page/backet-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CatalogPageComponent } from './pages/catalog-page/catalog-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 export const routes: Routes = [
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'user-page', component: UserPageComponent },
     { path: 'search-page', component: SearchPageComponent },
     { path: 'catalog/:type', component: CatalogPageComponent },
+    { path: 'login-page', component: LoginPageComponent},
     { path: '**', redirectTo: '/' }
 ];

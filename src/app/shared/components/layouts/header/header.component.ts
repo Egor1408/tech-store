@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
     selector: 'app-header',
@@ -13,8 +14,16 @@ import { RouterModule } from '@angular/router';
     ],
 })
 
-export class HeaderComponent {
-    @Input() isAuth!: boolean;
+export class HeaderComponent implements OnInit {
+    isAuth!: boolean;
+    constructor(private authService: AuthService) {}
+
+    ngOnInit(): void {
+        console.log(this.authService.token);
+        
+        this.isAuth = !!this.authService.token
+    }
+
     navigation: string[] = [
         'Smartphone',
         'TV',
