@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
     providedIn: 'root'
 })
 export class AuthService {
-    
+
     constructor (private http: HttpClient) {}
 
     get token(): string | null {
@@ -21,8 +21,12 @@ export class AuthService {
         return localStorage.getItem('fb-token');
     }
 
+    public get isAuth(): boolean {
+        return !!this.token;
+    }
+
     public login(user: ILoginUser): Observable<any> {
-        user.returnSecureToken = true;
+        user.returnSecureToken = true;        
         return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
             .pipe(
                 tap(this.setToken) 
@@ -33,18 +37,13 @@ export class AuthService {
         this.setToken(null);
     }
 
-    public get isAuth(): boolean {
-        return !!this.token;
-    }
-
     private setToken(response: any): void {
         if (response) {
-            const expDate = new Date(new Date().getTime() + +response.expiresIn);
+            const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);
             localStorage.setItem('fb-token', response.idToken);
-            localStorage.setItem('fb-token-exp', expDate.toString())
+            localStorage.setItem('fb-token-exp', expDate.toString());
         } else {
             localStorage.clear();
         }
-        
     }
 }

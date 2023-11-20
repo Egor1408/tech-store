@@ -33,7 +33,9 @@
                     
             </a>
         </li>
-        @if(isAuth){
+        @if(authService.isAuth){
+            <h2>AUTH</h2>
+        }
             <li class="user-panel-item">
                 <a routerLink="/backet-page">
                     <svg width="24" height="24" viewBox="0 0 25 23" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +50,7 @@
                     </svg>
                 </a>
             </li>
-        } @else {
+        <!-- } @else { -->
             <li class="user-panel-item">
                 <a routerLink="/login-page">
                     <svg idth="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +58,11 @@
                     </svg>
                 </a>
             </li>
-        }
+            <li class="user-panel-item">
+                <button class="secondary" (click)="logout()">
+                    logout
+                </button>
+            </li>
+        <!-- } -->
     </ul>
 </div>

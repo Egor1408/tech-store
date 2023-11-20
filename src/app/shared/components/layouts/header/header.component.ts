@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
@@ -8,6 +8,7 @@ import { AuthService } from '../../../services/auth.service';
     standalone: true,
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         CommonModule,
         RouterModule,
@@ -15,19 +16,22 @@ import { AuthService } from '../../../services/auth.service';
 })
 
 export class HeaderComponent implements OnInit {
-    isAuth!: boolean;
-    constructor(private authService: AuthService) {}
-
-    ngOnInit(): void {
-        console.log(this.authService.token);
-        
-        this.isAuth = !!this.authService.token
-    }
-
     navigation: string[] = [
         'Smartphone',
         'TV',
         'Laptop',
         'Accessories'
     ];
+
+    constructor(
+        public authService: AuthService,
+        private cdr: ChangeDetectorRef,
+    ) {}
+
+    ngOnInit(): void {}
+
+    public logout() {
+        this.authService.logout();
+        this.cdr.markForCheck();
+    }
 }

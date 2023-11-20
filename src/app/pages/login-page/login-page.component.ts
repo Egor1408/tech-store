@@ -42,10 +42,9 @@ export class LoginPageComponent implements OnInit {
             password: this.loginForm.value.password,
         }
 
-        this.authService.login(user).subscribe((res) => {
-          
-            this.loginForm.reset()
-            this.router.navigate(['/'])
+        this.authService.login(user).subscribe(() => {
+            this.loginForm.reset();
+            this.router.navigate(['/']);
             this.submitted = false
         })
     }
