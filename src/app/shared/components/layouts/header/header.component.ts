@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
@@ -16,6 +16,7 @@ import { AuthService } from '../../../services/auth.service';
 })
 
 export class HeaderComponent implements OnInit {
+    @Input() isAuth: boolean = false;
     navigation: string[] = [
         'Smartphone',
         'TV',
@@ -28,7 +29,10 @@ export class HeaderComponent implements OnInit {
         private cdr: ChangeDetectorRef,
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        console.log(this.isAuth);
+        
+    }
 
     public logout() {
         this.authService.logout();

@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/layouts/header/header.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FooterComponent } from './shared/components/layouts/footer/footer.component';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
     selector: 'app-root',
@@ -19,9 +20,18 @@ import { FooterComponent } from './shared/components/layouts/footer/footer.compo
     ],
 })
 export class AppComponent implements OnInit {
+    public isAuth: boolean = false;
 
-    constructor() {}
+    constructor(
+        public authService: AuthService
+    ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.authService.isAuth$.subscribe(
+            (val) => {
+                this.isAuth = val
+            }
+        )
+    }
 }
 
