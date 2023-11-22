@@ -29,9 +29,7 @@ export class HeaderComponent implements OnInit {
         private cdr: ChangeDetectorRef,
     ) {}
 
-    ngOnInit(): void {
-        console.log(this.isAuth);
-        
+    ngOnInit(): void {      
     }
 
     public logout() {

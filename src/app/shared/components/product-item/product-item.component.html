@@ -1,0 +1,7 @@
+<div class="product-wrap">
+    <img class="product-img" src="{{data.mainImg}}" alt="{{data.name}}">
+    <p class="product-name">{{data.name}}</p>
+    <p class="product-short-desc">{{data.shortDesc}}</p>
+    <p class="product-price">$ {{data.cost}}</p>
+    <button class="btn-yellow" (click)="buyItem(data.id)">BUY</button>
+</div>
