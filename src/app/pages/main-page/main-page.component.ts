@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from '../../shared/interfaces/product.interface';
 import { ProductItemComponent } from '../../shared/components/product-item/product-item.component';
+import { BannerComponent } from '../../shared/components/banner/banner.component';
 
 @Component({
     selector: 'app-main-page',
@@ -10,7 +11,8 @@ import { ProductItemComponent } from '../../shared/components/product-item/produ
     styleUrl: './main-page.component.scss',
     imports: [
         CommonModule,
-        ProductItemComponent
+        ProductItemComponent,
+        BannerComponent,
     ],
 })
 export class MainPageComponent {
@@ -58,5 +60,12 @@ export class MainPageComponent {
             shortDesc: 'camera 50 Mp',
         },
     ]
+
+    public banner: any = {
+        image: 'https://adresnie-tablichki.ru/upload/category/bannery/produkty/vektornyy_fon_eda.jpg',
+        title: 'TITLE',
+        subtitle: 'SUBTITLE'
+    }
+
     constructor() {}
 }
