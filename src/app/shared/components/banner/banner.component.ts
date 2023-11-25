@@ -1,11 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IBanner } from '../../interfaces/banner.intarface';
 
-interface IBannerParams {
-	url: string,
-	title: string,
-	description: string
-}
 
 @Component({
   selector: 'app-banner',
@@ -15,9 +11,8 @@ interface IBannerParams {
   styleUrl: './banner.component.scss'
 })
 export class BannerComponent {
-	@Input() bannersParams: IBannerParams = {
-		url: '../../../../assets/image/bannerimage.jpg',
-		title: "GREAT BANNER",
-		description: "this is a beast banner of fanners"
-	}
+
+	@Input() banner!:IBanner;
+
+	constructor(){}
 }
