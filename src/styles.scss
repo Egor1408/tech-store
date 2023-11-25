@@ -15,6 +15,8 @@ a {
 
 button {
     cursor: pointer;
+	background: none;
+	border: none;
 }
 
 .btn-main {
@@ -35,7 +37,70 @@ button {
     border: none;
 }
 
+.btn-subscribe {
+	background-color: #5ce975;
+}
+.btn-properties {
+	background-color: #e9b15c;
+}
+
 .not-border-btn {
     border: none;
     background: transparent;
 }
+
+.banner-wrapper {
+	width: auto;
+	margin: 0 auto;
+
+	.banner {
+		position: relative;
+
+		.banner-img {
+			width: 100%;
+		}
+
+		&-description-modul {
+			 position: absolute;
+			 top: 30%;
+			 left: 10%;
+
+			 .banner {
+
+				&-title,
+				&-description {
+					color: #5ce975;
+					font-size: 36px;
+					text-shadow: 10px 10px 10px  black;
+				}
+			}
+		}
+
+		&-actions {
+			position: absolute;
+			bottom: 15%;
+			right: 5%;
+
+			.btn {
+
+				&-subscribe,
+				&-properties {
+					color: black;
+					font-size: 36px;
+					border-radius: 16px;
+					box-shadow:8px 8px 4px #34374d;
+					padding: 6px;
+					margin-right: 16px;
+
+					&:active {
+						box-shadow: none;
+						animation-delay: 1.2s;
+						transform: translate(2px, 2px);
+					}
+				}
+			}
+		}
+	}
+}
+
+
