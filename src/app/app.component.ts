@@ -20,18 +20,18 @@ import { AuthService } from './shared/services/auth.service';
     ],
 })
 export class AppComponent implements OnInit {
-    public isAuth: boolean = false;
+    public isAuth!: boolean;
 
     constructor(
         public authService: AuthService
     ) {}
-
+    
     ngOnInit() {
-        this.authService.isAuth$.subscribe(
-            (val) => {
-                this.isAuth = val
-            }
-        )
+        this.authService.isAuth$
+        .subscribe((val) => {
+            this.isAuth = val
+        })
+        this.authService.isAuth$.next(!!this.authService.token)
     }
 }
 
