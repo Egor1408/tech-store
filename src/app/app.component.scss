@@ -16,8 +16,7 @@
 }
 
 .main {
-    display: flex;
-    justify-content: center;
+    display: grid;
     height: 700px;
     background: rgba(255, 0, 0, 0.1);
 }
@@ -26,4 +25,8 @@
     display: grid;
     height: 100px;
     background: rgba(106, 90, 205, 0.1);
+}
+
+router-outlet {
+    position: absolute;
 }
