@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IProduct } from '../../shared/interfaces/product.interface';
 import { ProductItemComponent } from '../../shared/components/product-item/product-item.component';
 import { BannerComponent } from '../../shared/components/banner/banner.component';
+import { IBanner } from '../../shared/interfaces/banner.intarface';
 
 @Component({
     selector: 'app-main-page',
@@ -61,10 +62,11 @@ export class MainPageComponent {
         },
     ]
 
-    public banner: any = {
+    public banner: IBanner = {
         image: 'https://adresnie-tablichki.ru/upload/category/bannery/produkty/vektornyy_fon_eda.jpg',
         title: 'TITLE',
-        subtitle: 'SUBTITLE'
+        subtitle: 'SUBTITLE',
+		rightText: true
     }
 
     constructor() {}
