@@ -63,10 +63,12 @@ export class MainPageComponent {
     ]
 
     public banner: IBanner = {
-        image: 'https://adresnie-tablichki.ru/upload/category/bannery/produkty/vektornyy_fon_eda.jpg',
-        title: 'TITLE',
-        subtitle: 'SUBTITLE',
-		rightText: true
+		id: 1,
+        image: './assets/image/banner/bannerimage.jpg',
+        title: 'Realme 10 Pro+ 5G',
+        description: ['SUBTITLE','property1','property1'],
+		rightText: false,
+		price: 6000,
     }
 
     constructor() {}

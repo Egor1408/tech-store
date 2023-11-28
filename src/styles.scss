@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	color: #000;
+
+	font-family: Poppins;
 }
 
 ul {
@@ -37,11 +42,12 @@ button {
     border: none;
 }
 
-.btn-subscribe {
-	background-color: #5ce975;
-}
-.btn-properties {
-	background-color: #e9b15c;
+.btn-black {
+	background: #000;
+	color: #fff;
+	padding: 10px;
+	border-radius: 15px;
+	border: none;
 }
 
 .not-border-btn {

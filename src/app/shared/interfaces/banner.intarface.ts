@@ -1,6 +1,9 @@
 export interface IBanner {
+	id:number,
 	image: string,
 	title: string,
-	subtitle: string
-	rightText: boolean
+	description?: string[],
+	rightText: boolean,
+	price?: number,
+	count?: number,
 }
