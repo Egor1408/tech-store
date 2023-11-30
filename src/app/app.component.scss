@@ -16,8 +16,9 @@
 }
 
 .main {
-    display: grid;
-    height: 700px;
+    display: flex;
+    justify-content: center;
+    height: auto;
     background: rgba(255, 0, 0, 0.1);
 }
 
