@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IProduct } from '../../shared/interfaces/product.interface';
 import { ProductItemComponent } from '../../shared/components/product-item/product-item.component';
 import { BannerComponent } from '../../shared/components/banner/banner.component';
+import { IBanner } from '../../shared/interfaces/banner.intarface';
 
 @Component({
     selector: 'app-main-page',
@@ -61,10 +62,13 @@ export class MainPageComponent {
         },
     ]
 
-    public banner: any = {
-        image: 'https://adresnie-tablichki.ru/upload/category/bannery/produkty/vektornyy_fon_eda.jpg',
-        title: 'TITLE',
-        subtitle: 'SUBTITLE'
+    public banner: IBanner = {
+		id: 1,
+        image: './assets/image/banner/bannerimage.jpg',
+        title: 'Realme 10 Pro+ 5G',
+        description: ['SUBTITLE','property1','property1'],
+		rightText: false,
+		price: 6000,
     }
 
     constructor() {}
