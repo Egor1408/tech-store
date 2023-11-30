@@ -1,1 +1,26 @@
-<p>admin-page works!</p>
+<div class="wrap admin-page">
+    <h2 class="page-title">admin page</h2>
+    <div class="admin-navigation">
+        <ul class="navigation-list">
+            <li class="navigation-item">
+                <a [routerLink]="['products']"
+                    routerLinkActive="active">
+                    products
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a [routerLink]="['banners']"
+                    routerLinkActive="active">
+                    banners
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a [routerLink]="['users']"
+                    routerLinkActive="active">
+                    users
+                </a>
+            </li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+</div>

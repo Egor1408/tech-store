@@ -20,12 +20,14 @@
     justify-content: center;
     height: auto;
     background: rgba(255, 0, 0, 0.1);
-
-
 }
 
 .footer {
     display: grid;
     height: 100px;
     background: rgba(106, 90, 205, 0.1);
+}
+
+router-outlet {
+    position: absolute;
 }

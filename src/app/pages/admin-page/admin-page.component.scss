@@ -1,0 +1,31 @@
+.admin-page {
+
+    .admin-navigation {
+        margin: 0 auto 30px;
+    }
+
+    .navigation {
+        
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        &-item {
+            
+            a {
+                display: flex;
+                justify-content: center;
+                padding: 15px;
+                font-size: 18px;
+                font-weight: 500;
+                background: #af1;
+
+                &.active {
+                    background: #1fa;
+                }
+            }
+        }
+    }
+}
