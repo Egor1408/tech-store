@@ -1,0 +1,17 @@
+<div class="slider-wrapper">
+	<div class="slides" [style]="position">
+		@for (banner of banners; track banner.id) {
+			<app-banner [banner]="banner"></app-banner>
+		}
+	</div>
+	<div class="navigation">
+		<button class="navigation-prev" (click)="slideToLeft()">prev</button>
+		<button class="navigation-next" (click)="slideToRight()">next</button>
+	</div>
+	<div class="pagination">
+		<div class="pagination-dot"></div>
+		<div class="pagination-dot"></div>
+		<div class="pagination-dot"></div>
+		<div class="pagination-dot"></div>
+	</div>
+</div>

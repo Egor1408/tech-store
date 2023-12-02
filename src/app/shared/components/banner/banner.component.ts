@@ -12,7 +12,7 @@ import { IBanner } from '../../interfaces/banner.intarface';
 })
 export class BannerComponent {
 
-	@Input() banner!:IBanner;
+		@Input() banner!:IBanner;
 
 	constructor(){}
 }
