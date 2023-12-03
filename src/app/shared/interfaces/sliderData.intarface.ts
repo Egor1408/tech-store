@@ -1,9 +1,9 @@
-export interface IBanner {
+export interface ISliderData {
 	id:number,
 	image: string,
-	title: string,
+	title?: string,
 	description?: string[],
-	rightText: boolean,
+	rightText?: boolean,
 	price?: number,
 	count?: number,
 }
