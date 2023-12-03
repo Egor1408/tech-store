@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
-import { IBanner } from '../../interfaces/banner.intarface';
+import { ISliderData } from '../../interfaces/sliderData.intarface';import { IProduct } from '../../interfaces/product.interface';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { IBanner } from '../../interfaces/banner.intarface';
 })
 export class BannerComponent {
 
-		@Input() banner!:IBanner;
+		@Input() banner!: ISliderData;
 
 	constructor(){}
 }

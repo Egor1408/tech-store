@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from '../../shared/interfaces/product.interface';
 import { ProductItemComponent } from '../../shared/components/product-item/product-item.component';
-import { IBanner } from '../../shared/interfaces/banner.intarface';
+import { ISliderData } from '../../shared/interfaces/sliderData.intarface';
 import { SliderComponent } from '../../shared/components/slider/slider.component';
 
 @Component({
@@ -62,7 +62,7 @@ export class MainPageComponent {
         },
     ]
 
-    public banners: IBanner[] = [
+    public sliderData: ISliderData[] = [
 		{
 			id: 1,
 			image: './assets/image/banner/bannerimage.jpg',
@@ -102,6 +102,17 @@ export class MainPageComponent {
 			description: ['SUBTITLE','property1','property1'],
 			rightText: false,
 			price: 76000,
+		}
+	]
+
+	public sliderData2: ISliderData[] = [
+		{
+			id:1,
+			image: './assets/image/banner/bannerimage.jpg',
+		},
+		{
+			id:2,
+			image: './assets/image/banner/bannerimage.jpg',
 		}
 	]
 

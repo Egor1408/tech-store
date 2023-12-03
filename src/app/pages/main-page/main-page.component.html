@@ -1,6 +1,6 @@
 
 <div class="main-wrapper">
-	<app-slider [banners]="banners"></app-slider>
+	<app-slider [sliderData]="sliderData"></app-slider>
 	<div class="items-list">
 		@for (item of productItems; track item.id) {
 			<app-product-item [data]="item"></app-product-item>

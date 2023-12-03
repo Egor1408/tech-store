@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BannerComponent } from '../banner/banner.component';
-import { IBanner } from '../../interfaces/banner.intarface';
+import { ISliderData } from '../../interfaces/sliderData.intarface';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { IBanner } from '../../interfaces/banner.intarface';
   styleUrl: './slider.component.scss'
 })
 export class SliderComponent {
-	@Input() banners!: IBanner[];
+	@Input() sliderData!:ISliderData[];
 
 	bannerId:number = 0
 	coordinate: number = 0
@@ -25,23 +25,29 @@ export class SliderComponent {
 	}
 
 	slideToLeft() {
-		console.log(this.banners.length);
 		if (this.bannerId>0) {
 			this.coordinate += 1440
 			this.setPosition(this.coordinate)
 			this.position = this.newPosition
 			this.bannerId --
-
+		} else {
+			this.coordinate = -1440*(this.sliderData.length-1)
+			this.bannerId = this.sliderData.length-1
+			this.setPosition(this.coordinate)
+			this.position = this.newPosition
 		}
 	}
-
 	slideToRight() {
-		if (this.bannerId <= this.banners.length-2) {
-
+		if (this.bannerId <= this.sliderData.length-2) {
 			this.coordinate -= 1440
 			this.setPosition(this.coordinate)
 			this.position = this.newPosition
 			this.bannerId ++
+		} else if (this.bannerId > this.sliderData.length-2){
+			this.coordinate = 0
+			this.setPosition(this.coordinate)
+			this.position = this.newPosition
+			this.bannerId = 0
 		}
 	}
 
