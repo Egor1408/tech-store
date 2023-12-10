@@ -1,8 +1,8 @@
 export interface IBanner {
     id: number,
-    imgPath: string,
-    title: string,
-    subTitle: string,
+    imgPath?: string,
+    title?: string,
+    subTitle?: string,
     // params: {
     //     shadowBlock: boolean,
     //     shadowColor: string,

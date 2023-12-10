@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
-import { ISliderData } from '../../interfaces/sliderData.intarface';import { IProduct } from '../../interfaces/product.interface';
-
+import { ISliderData } from '../../interfaces/sliderData.intarface';
 
 @Component({
   selector: 'app-banner',

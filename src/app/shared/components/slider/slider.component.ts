@@ -2,17 +2,20 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BannerComponent } from '../banner/banner.component';
 import { ISliderData } from '../../interfaces/sliderData.intarface';
-
+import { IProduct } from '../../interfaces/product.interface';
+import { ProductItemComponent } from '../product-item/product-item.component';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule, BannerComponent],
+  imports: [CommonModule, BannerComponent, ProductItemComponent],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss'
 })
 export class SliderComponent {
 	@Input() sliderData!:ISliderData[];
+	@Input() productItems!: IProduct[];
+	@Input() type!: string;
 
 	bannerId:number = 0
 	coordinate: number = 0
