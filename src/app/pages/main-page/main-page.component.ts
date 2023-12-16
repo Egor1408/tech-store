@@ -6,6 +6,7 @@ import { IProduct } from '../../shared/interfaces/product.interface';
 import { ISliderData } from '../../shared/interfaces/sliderData.intarface';
 import { sliderData } from '../../bannerData';
 import { productItems } from '../../productData';
+import { swiperTypes } from '../../shared/data/enums';
 
 @Component({
     selector: 'app-main-page',
@@ -18,14 +19,13 @@ import { productItems } from '../../productData';
 		SliderComponent
     ],
 })
+
+
 export class MainPageComponent {
 	sliderData:ISliderData[] = [];
 	productItems: IProduct[]= []
 
-	public type:string[] = [
-		"banner",
-		"product"
-	]
+	public type = swiperTypes
 
     constructor() {
 		this.sliderData = sliderData

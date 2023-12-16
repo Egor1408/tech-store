@@ -18,37 +18,37 @@ export class SliderComponent {
 	@Input() type!: string;
 
 	bannerId:number = 0
-	coordinate: number = 0
+	offset: number = 0
 
 	position:string = `transform: translate(${0}px)`
-	newPosition: string = `transform: translate(${this.coordinate}px)`
+	newPosition: string = `transform: translate(${this.offset}px)`
 
-	setPosition(coor:number):any {
+	setPosition(coor:number):void {
 		this.newPosition = `transform: translate(${coor}px)`
 	}
 
 	slideToLeft() {
 		if (this.bannerId>0) {
-			this.coordinate += 1440
-			this.setPosition(this.coordinate)
+			this.offset += 1440
+			this.setPosition(this.offset)
 			this.position = this.newPosition
 			this.bannerId --
 		} else {
-			this.coordinate = -1440*(this.sliderData.length-1)
+			this.offset = -1440*(this.sliderData.length-1)
 			this.bannerId = this.sliderData.length-1
-			this.setPosition(this.coordinate)
+			this.setPosition(this.offset)
 			this.position = this.newPosition
 		}
 	}
 	slideToRight() {
 		if (this.bannerId <= this.sliderData.length-2) {
-			this.coordinate -= 1440
-			this.setPosition(this.coordinate)
+			this.offset -= 1440
+			this.setPosition(this.offset)
 			this.position = this.newPosition
 			this.bannerId ++
 		} else if (this.bannerId > this.sliderData.length-2){
-			this.coordinate = 0
-			this.setPosition(this.coordinate)
+			this.offset = 0
+			this.setPosition(this.offset)
 			this.position = this.newPosition
 			this.bannerId = 0
 		}
