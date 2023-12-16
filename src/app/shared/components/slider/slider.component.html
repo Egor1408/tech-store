@@ -1,14 +1,21 @@
 <div class="slider-wrapper">
-	<div class="slides" [style]="position">
-		@for (slide of sliderData; track slide.id) {
-			<app-banner [banner]="slide"></app-banner>
+
+	@switch (type) {
+		@case("banner") {
+			<div class="slides" [style]="position">
+				@for (slide of sliderData; track slide.id) {
+					<app-banner [banner]="slide"></app-banner>
+				}
+			</div>
 		}
-	</div>
-	<div class="slides" [style]="position">
-		@for (slide of sliderData; track slide.id) {
-			<app-banner [banner]="slide"></app-banner>
+		@case ("product") {
+			<div class="slides" [style]="position">
+				@for (slide of productItems; track slide.id) {
+				<app-product-item [data]="slide"></app-product-item>
+				}
+			</div>
 		}
-	</div>
+	}
 
 	<div class="navigation">
 		<button class="navigation-prev" (click)="slideToLeft()">prev</button>
